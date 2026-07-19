@@ -1,0 +1,30 @@
+# 示例数据，替换为你的真实作品；可加 image 字段（缩略图 URL）显示封面
+categories:
+  - MCU
+  - Linux
+  - Sensor
+  - Power
+
+items:
+  - name: 机器人通用开发套件 - RobotCtrl
+    desc: 专为机器人控制设计的 MCU 通用开发套件，模块化堆叠，拓展性强。
+    categories: [MCU]
+    website: https://wiki.hanvon.top
+    repo: https://github.com/wild-civil
+
+  - name: 迷你 Linux 开发板 - Flip
+    desc: 基于全志 F1C200s 的 Linux 开发板，巴掌大小。
+    categories: [Linux]
+    website: https://wiki.hanvon.top
+    repo: https://github.com/wild-civil
+
+  - name: 红外传感器模块 - Grove IRS
+    desc: 低功耗、高灵敏度的人体存在与运动检测传感器。
+    categories: [Sensor]
+    website: https://wiki.hanvon.top
+
+  - name: 电源评估板 - TPS54531
+    desc: TI 3.5–28V 输入、5A、570kHz Buck 转换器评估板。
+    categories: [Power]
+    website: https://wiki.hanvon.top
+    repo: https://github.com/wild-civil

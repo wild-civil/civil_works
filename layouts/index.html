@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ .Site.Title }}</title>
+  <meta name="description" content="{{ .Site.Params.subtitle }}" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="{{ "css/works.css" | relURL }}" />
+</head>
+<body>
+  <main class="main">
+    <h1>{{ .Site.Title }}</h1>
+    <hr />
+    <p>{{ .Site.Params.subtitle }}</p>
+
+    <div id="myBtnContainer">
+      <button class="btn active" onclick="filterSelection('all')">Show all</button>
+      {{ range .Site.Data.projects.categories }}
+      <button class="btn" onclick="filterSelection('{{ . }}')">{{ . }}</button>
+      {{ end }}
+    </div>
+
+    <div class="row">
+      {{ range .Site.Data.projects.items }}
+      <div class="column {{ delimit .categories " " }}">
+        <div class="content">
+          {{ with .image }}<img src="{{ . }}" alt="{{ .name }}" />{{ end }}
+          <h3>{{ .name }}</h3>
+          <p>{{ .desc }}</p>
+          <div class="btn-group">
+            {{ with .website }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer"><button><i class="fa fa-paperclip"></i> Website</button></a>{{ end }}
+            {{ with .repo }}<a href="{{ . }}" target="_blank" rel="noopener noreferrer"><button><i class="fa fa-github"></i> Repo</button></a>{{ end }}
+          </div>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>{{ .Site.Params.footer }}</p>
+  </footer>
+
+  <script>
+    function filterSelection(c) {
+      var cols = document.getElementsByClassName("column");
+      for (var i = 0; i < cols.length; i++) {
+        var el = cols[i];
+        var match = (c === "all") ||
+          (" " + el.className + " ").indexOf(" " + c + " ") > -1;
+        if (match) { el.classList.add("show"); }
+        else { el.classList.remove("show"); }
+      }
+      var btns = document.getElementsByClassName("btn");
+      for (var j = 0; j < btns.length; j++) { btns[j].classList.remove("active"); }
+      if (event && event.currentTarget) { event.currentTarget.classList.add("active"); }
+    }
+    // 初始：全部显示
+    (function () {
+      var cols = document.getElementsByClassName("column");
+      for (var i = 0; i < cols.length; i++) { cols[i].classList.add("show"); }
+    })();
+  </script>
+</body>
+</html>

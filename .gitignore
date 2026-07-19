@@ -1,16 +1,4 @@
-# MkDocs 构建产物
-site/
-
-# MkDocs Material 资源缓存
-.material/
-
-# Python 运行时缓存
-__pycache__/
-*.pyc
-*.pyo
-
-# 一些参考文件
-Reference
-
-# 
-.workbuddy
+# Hugo 构建产物
+/public/
+/resources/
+hugo.exe

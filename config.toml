@@ -1,0 +1,13 @@
+baseURL = "https://works.hanvon.top/"
+languageCode = "zh-CN"
+title = "我的作品"
+
+# 关闭默认的 tag/category 分类页与 RSS，本站只渲染首页筛选网格
+disableKinds = ["taxonomy", "term", "RSS"]
+
+# 使用仓库内 layouts/ 自定义布局（不依赖外部主题）
+# 作品由 data/projects.yaml 驱动（见 layouts/index.html 的分类筛选网格）
+
+[params]
+  subtitle = "硬件项目作品集"
+  footer = "© 2026 我的作品 · 由 Hugo 驱动（参考 Power's Works 风格）"
