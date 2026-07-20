@@ -6,6 +6,13 @@ categories:
   - Power
 
 items:
+  - name: DormGuard
+    desc: 一句话简介
+    categories: [MCU]        # 属于哪些分类（可多个，决定被哪些按钮筛出）
+    website: https://wild-civil.vercel.app/post/50636d10.html      # 可选：作品主页
+    # repo: https://github.com/...   # 可选：源码仓库
+    image: https://youpai.hanvon.top/homeassistant/A520/peripheral/%E9%97%A8%E7%A6%81%E4%B8%BB%E6%8E%A7.png # /images/xxx.png    # 可选：封面图（见问题②）
+
   - name: 机器人通用开发套件 - RobotCtrl
     desc: 专为机器人控制设计的 MCU 通用开发套件，模块化堆叠，拓展性强。
     categories: [MCU]
